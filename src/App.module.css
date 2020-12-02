@@ -1,0 +1,77 @@
+.app {
+}
+
+.drumMachine {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .7);
+  width: 800px;
+  height: 400px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+}
+
+.machineHead {
+  padding: 16px;
+  box-shadow: 0 0 12px -1px rgba(0, 0, 0, .7) inset, 0 0 5px 2px rgba(0, 0, 0, .7);
+  z-index: 80;
+  border-radius: 8px 8px 0 0;
+  background-image: linear-gradient(180deg, rgba(80, 80, 80, .5) 60%, rgba(0, 0, 0, .5)), url("./assets/redox_01.webp");
+}
+
+.machineTitle {
+  margin-bottom: 8px;
+  font-family: 'Gochi Hand', cursive;
+  font-style: italic;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .7);
+  font-size: x-large;
+}
+
+.displayContainer {
+  position: relative;
+}
+
+.display {
+  background: url("./assets/noisy_grid.webp") repeat scroll 0% 0%;
+  display: inline-block;
+  width: 300px;
+  border: 4px solid black;
+  color: #ededed;
+  padding: 8px;
+  font-family: 'Press Start 2P', cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  transition: all 200ms ease-out;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.displayOverlay {
+  background-color: initial;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+
+.display, .displayOverlay {
+  width: 300px;
+  height: 40px;
+}
+
+.controlsContainer {
+  z-index: 79;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, .7) inset;
+  flex-grow: 1;
+  border-radius: 0 0 8px 8px;
+  background-image: linear-gradient(170deg, rgba(80, 80, 80, .5) 40%, rgba(0, 0, 0, .5)), url("https://www.toptal.com/designers/subtlepatterns/patterns/redox_01.png");
+}

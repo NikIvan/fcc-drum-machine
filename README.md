@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Assets used
+
+- [TapeSnare_15.wav](https://freesound.org/s/212208/) by alexthegr81 
+- [Snare 01.wav](https://freesound.org/s/100393/) by zgump 
+- [Snare Drum, Single Hit, A (H1).wav](https://freesound.org/s/410514/) by InspectorJ (www.jshaw.co.uk) of Freesound.org
+- [kick_gettinglaid.wav](https://freesound.org/s/171104/) by DWSD
+- [kick HipHop 1.wav](https://freesound.org/s/131336/) by kaonaya
+- [Dre Kick 06.wav](https://freesound.org/s/330037/) by .Andre_Onate
+- [80s Hat](https://freesound.org/s/387347/) by Hard3eat
+- [Hat lofi.wav](https://freesound.org/s/523173/) by Sami_Kullström
+- [hi-hat3.wav](https://freesound.org/s/404889/) by gnuoctathorpe
+  
+  
