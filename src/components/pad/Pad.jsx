@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import {useEffect, useState, useRef} from 'react';
+import { useDrumMachineContext } from '../../contexts/DrumMachineContext';
 
 import './Pad.css';
 
@@ -13,8 +14,9 @@ function playSound(audio) {
  * TODO: Send active pad name to display
  */
 function Pad(props) {
-  const {id, isPowerOn, keyCode, data} = props;
-  const {src, name} = data;
+  const {isPowerOn, setDisplayText, soundBank} = useDrumMachineContext();
+  const { id, keyCode, index} = props;
+  const { src, name } = soundBank.data[index];
 
   const padRef = useRef();
   const audioRef = useRef();
@@ -36,6 +38,7 @@ function Pad(props) {
         return;
       }
 
+      setDisplayText(name);
       playSound(audio);
     }
 
@@ -76,7 +79,7 @@ function Pad(props) {
       document.removeEventListener('keydown', onKeyDown);
       document.addEventListener('keyup', onKeyUp);
     }
-  }, [id, isPowerOn, keyCode, setIsPadPressed]);
+  }, [id, isPowerOn, keyCode, setIsPadPressed, setDisplayText, name]);
 
   useEffect(() => {
     setPadClassName(classnames('drum-pad', {
