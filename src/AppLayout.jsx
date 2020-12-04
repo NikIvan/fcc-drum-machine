@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import classnames from 'classnames';
 
 import PadContainer from './components/pad-container';
 
@@ -35,7 +36,7 @@ function AppLayout() {
     }
   }, [isPowerOn, soundBank, setDisplayText]);
 
-  const onClick = (e) => {
+  const onPowerClick = (e) => {
     setPower(!isPowerOn);
   };
 
@@ -44,20 +45,25 @@ function AppLayout() {
       <div id="drum-machine" className={classes.drumMachine}>
         <div className={classes.machineHead}>
           <header className={classes.machineTitle}>FCC Drum machine</header>
-          <div className={classes.displayContainer}>
-            <div
-              className={classes.display}
-              id="display"
-              style={isPowerOn ? powerOnDisplayStyle : {}}
-            >
-              {isPowerOn && displayText}
+          <div className={classes.controlsLine}>
+            <div className={classes.displayContainer}>
+              <div
+                className={classes.display}
+                id="display"
+                style={isPowerOn ? powerOnDisplayStyle : {}}
+              >
+                {isPowerOn && displayText}
+              </div>
+              <div
+                className={classes.displayOverlay}
+                style={isPowerOn ? powerOnDisplayOverlayStyle : {}}
+              />
             </div>
-            <div
-              className={classes.displayOverlay}
-              style={isPowerOn ? powerOnDisplayOverlayStyle : {}}
-            />
+            <button
+              className={classnames(classes.powerButton, {[classes.powerButtonOn]: isPowerOn})}
+              onClick={onPowerClick}
+            ><i className="fas fa-power-off" /></button>
           </div>
-          <button onClick={onClick}>Power</button>
         </div>
         <div className={classes.controlsContainer}>
           <PadContainer />

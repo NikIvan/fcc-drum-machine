@@ -1,4 +1,3 @@
-import { useDrumMachineContext } from '../../contexts/DrumMachineContext';
 import Pad from '../pad';
 
 import classes from './PadContainer.module.css';
@@ -9,7 +8,7 @@ import classes from './PadContainer.module.css';
  */
 function PadContainer() {
   return (
-    <div>
+    <div className={classes.padsContainer}>
       <div className={classes.padLine}>
         <Pad
           id='Q'

@@ -3,8 +3,8 @@
 
 .drumMachine {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .7);
-  width: 800px;
-  height: 400px;
+  width: 460px;
+  height: 500px;
   margin: 40px auto;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,7 @@
   z-index: 80;
   border-radius: 8px 8px 0 0;
   background-image: linear-gradient(180deg, rgba(80, 80, 80, .5) 60%, rgba(0, 0, 0, .5)), url("./assets/redox_01.webp");
+  height: 130px;
 }
 
 .machineTitle {
@@ -29,8 +30,16 @@
   font-size: x-large;
 }
 
-.displayContainer {
+.controlsLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
+  height: 40px;
+}
+
+.displayContainer {
+  height: 100%;
 }
 
 .display {
@@ -64,14 +73,44 @@
   width: 300px;
   height: 40px;
 }
+.powerButton {
+  position: relative;
+  margin-right: 20px;
+  width: 40px;
+  height: 100%;
+  border-radius: 50%;
+  border: none;
+  /*background-image: linear-gradient(180deg, rgba(80, 80, 80, .5) 60%, rgba(0, 0, 0, .5)), url("./assets/redox_01.webp")*/
+  background-image: url("./assets/redox_01.webp");
+/*  #919191, #dddddf
+*/
+}
+
+.powerButton::before {
+  background: linear-gradient(180deg, #f6f6f8, #6b6c6e);
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+}
+
+
+.powerButtonOn {
+  color: rgb(168, 204, 33);
+  text-shadow: rgba(157, 188, 38, 0.6) 0 0 6px;
+}
 
 .controlsContainer {
-  z-index: 79;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   padding: 16px;
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, .7) inset;
-  flex-grow: 1;
   border-radius: 0 0 8px 8px;
   background-image: linear-gradient(170deg, rgba(80, 80, 80, .5) 40%, rgba(0, 0, 0, .5)), url("https://www.toptal.com/designers/subtlepatterns/patterns/redox_01.png");
 }
