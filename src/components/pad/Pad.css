@@ -9,12 +9,15 @@
   background: rgb(73, 73, 73);
   user-select: none;
   font-family: 'Gochi Hand', cursive;
-  color: whitesmoke;
   font-size: 2em;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.drum-pad:first-child {
+  margin-left: 0;
 }
 
 .drum-pad-active {
@@ -24,7 +27,7 @@
 
 .drum-pad-powerOn {
   color: rgb(168, 204, 33);
-  text-shadow: rgba(157, 188, 38, 0.6) 0px 0px 6px;
+  text-shadow: rgba(157, 188, 38, 0.6) 0 0 6px;
 }
 
 .drum-pad-powerOn-active {

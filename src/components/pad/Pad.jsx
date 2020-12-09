@@ -4,9 +4,15 @@ import { useDrumMachineContext } from '../../contexts/DrumMachineContext';
 
 import './Pad.css';
 
-function playSound(audio) {
+/**
+ *
+ * @param {HTMLAudioElement} audio
+ * @param {Number} volume
+ */
+function playSound(audio, volume) {
   audio.currentTime = 0;
-  audio.play();
+  audio.volume = volume / 100;
+  audio.play().catch(err => console.error(err));
 }
 
 /**
@@ -14,7 +20,7 @@ function playSound(audio) {
  * TODO: Send active pad name to display
  */
 function Pad(props) {
-  const {isPowerOn, setDisplayText, soundBank} = useDrumMachineContext();
+  const {isPowerOn, setDisplayText, soundBank, volume} = useDrumMachineContext();
   const { id, keyCode, index} = props;
   const { src, name } = soundBank.data[index];
 
@@ -39,15 +45,11 @@ function Pad(props) {
       }
 
       setDisplayText(name);
-      playSound(audio);
+      playSound(audio, volume);
     }
 
     function onPadUp(e) {
       setIsPadPressed(false);
-      
-      if (!isPowerOn) { 
-        return;
-      }
     }
 
     function onKeyDown(e) {
@@ -79,7 +81,7 @@ function Pad(props) {
       document.removeEventListener('keydown', onKeyDown);
       document.addEventListener('keyup', onKeyUp);
     }
-  }, [id, isPowerOn, keyCode, setIsPadPressed, setDisplayText, name]);
+  }, [id, isPowerOn, keyCode, setIsPadPressed, setDisplayText, name, volume]);
 
   useEffect(() => {
     setPadClassName(classnames('drum-pad', {

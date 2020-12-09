@@ -23,6 +23,8 @@ function AppLayout() {
     displayText, 
     setDisplayText, 
     soundBank,
+    volume,
+    setVolume,
   } = useDrumMachineContext();
   
   
@@ -39,6 +41,22 @@ function AppLayout() {
   const onPowerClick = (e) => {
     setPower(!isPowerOn);
   };
+
+  const onVolumeUpClick = (e) => {
+    if (!isPowerOn) {
+      return;
+    }
+
+    setVolume(volume + 5);
+  }
+
+  const onVolumeDownClick = (e) => {
+    if (!isPowerOn) {
+      return;
+    }
+
+    setVolume(volume - 5);
+  }
 
   return (
     <div className={classes.app}>
@@ -67,6 +85,20 @@ function AppLayout() {
         </div>
         <div className={classes.controlsContainer}>
           <PadContainer />
+          <div className={classes.volumeContainer}>
+            <button
+              className={classnames(classes.controlBtn, {
+                [classes.controlBtnPowerOn]: isPowerOn,
+              })}
+              onClick={onVolumeUpClick}
+            ><i className="fas fa-volume-up" /></button>
+            <button
+              className={classnames(classes.controlBtn, {
+                [classes.controlBtnPowerOn]: isPowerOn,
+              })}
+              onClick={onVolumeDownClick}
+            ><i className="fas fa-volume-down" /></button>
+          </div>
         </div>
       </div>
     </div>

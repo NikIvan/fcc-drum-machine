@@ -3,8 +3,8 @@
 
 .drumMachine {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .7);
-  width: 460px;
-  height: 500px;
+  width: 420px;
+  height: 460px;
   margin: 40px auto;
   display: flex;
   flex-direction: column;
@@ -80,37 +80,90 @@
   height: 100%;
   border-radius: 50%;
   border: none;
-  /*background-image: linear-gradient(180deg, rgba(80, 80, 80, .5) 60%, rgba(0, 0, 0, .5)), url("./assets/redox_01.webp")*/
-  background-image: url("./assets/redox_01.webp");
-/*  #919191, #dddddf
-*/
+  text-shadow: 0 0 1px white;
+  background-image: linear-gradient(45deg, rgba(246, 246, 248, .5), rgba(110, 110, 110, .5), rgba(246, 246, 248, .5), rgba(110, 110, 110, .5)), url("./assets/redox_01.webp");
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, .7), 5px 5px 10px rgba(0, 0, 0, .6);
 }
 
 .powerButton::before {
-  background: linear-gradient(180deg, #f6f6f8, #6b6c6e);
+  background: radial-gradient(rgba(246, 246, 248, .5) 20%, rgba(110, 110, 110, .5)), url("./assets/redox_01.webp");
   display: block;
-  width: 42px;
-  height: 42px;
   border-radius: 50%;
   border: none;
   position: absolute;
   content: "";
-  top: 0;
-  left: 0;
+  width: 36px;
+  height: 36px;
+  top: 2px;
+  left: 2px;
 }
 
+.powerButton i {
+  z-index: 2;
+  position: relative;
+}
 
 .powerButtonOn {
   color: rgb(168, 204, 33);
   text-shadow: rgba(157, 188, 38, 0.6) 0 0 6px;
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, .7), 4px 4px 6px rgba(0, 0, 0, .2) inset, -4px -4px 6px rgba(0, 0, 0, .2) inset;
+}
+
+.powerButtonOn::before {
+  background: radial-gradient(rgba(246, 246, 248, .5) 20%, rgba(110, 110, 110, .5)), url("./assets/redox_01.webp");
 }
 
 .controlsContainer {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 16px;
-  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, .7) inset;
+  justify-content: space-between;
+  box-shadow: 0 0 12px 2px rgba(0, 0, 0, .7) inset;
   border-radius: 0 0 8px 8px;
   background-image: linear-gradient(170deg, rgba(80, 80, 80, .5) 40%, rgba(0, 0, 0, .5)), url("https://www.toptal.com/designers/subtlepatterns/patterns/redox_01.png");
+  height: 100%;
+  align-items: baseline;
+  padding: 32px;
 }
+
+.volumeContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  justify-content: space-evenly;
+  height: 140px;
+  align-items: center;
+}
+
+.controlBtn {
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 4px 4px 6px rgba(255, 255, 255, .4) inset, -4px -4px 6px rgba(0, 0, 0, .5) inset, 0 0 1px 2px rgba(0, 0, 0, .7), 5px 5px 10px rgba(0, 0, 0, .6);
+  cursor: pointer;
+  background: rgb(73, 73, 73);
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: 'Gochi Hand', cursive;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  border: none;
+}
+
+.controlBtnPowerOn {
+  color: rgb(168, 204, 33);
+  text-shadow: rgba(157, 188, 38, 0.6) 0 0 6px;
+}
+
+.controlBtn:active {
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, .7), 4px 4px 6px rgba(0, 0, 0, .6) inset, -4px -4px 6px rgba(0, 0, 0, .6) inset;
+  background-color: #6d6d6d;
+}
+
+.controlBtnPowerOn:active {
+  color: rgb(201, 255, 0);
+  text-shadow: rgba(201, 225, 0, .6) 0 0 6px;
+}
+
